@@ -1,0 +1,31 @@
+%% Initialization
+clear ; close all; clc
+
+addpath('/home/arif/Desktop/libsvm-3.21/matlab');
+
+%%Load data
+data = load('-ascii' , 'data_banknote_authentication.txt');
+sz = size(data,1);
+
+%Randomize dataset
+data = data(randperm(sz),:);
+
+%Create train and test subsets
+train = data(1 : floor(0.7 * sz), :);
+test = data(floor(0.7 * sz) + 1 : end, :);
+
+%Extract X and y from train dataset
+X_train = double(train(:,1:4));
+x_train_labels = [1 ; 2];
+% double([1:size(X_train,1)]');
+
+y_train = train(:,5) + ones(size(train,1),1);%Express 0/1 as 1/2
+				   %so as to make it work with rest 
+				   %of the helper functions.
+X_test = test(:,1:4);
+X_test_labels = [1:size(X_test,1)]';
+
+y_test = test(:,5) + ones(sz - floor(0.7 * sz), 1);
+
+model = svmtrain(y_train,X_train,'-s 0 -t 0 -c 1');
+[pred_label, acc, prob_est] = svmpredict(y_test,X_test,model,'-b 0');

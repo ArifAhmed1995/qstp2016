@@ -1,0 +1,50 @@
+clear ;close all; clc
+
+data = load('-ascii' , '/home/arif/Desktop/data_banknote_authentication.txt');
+
+X = data(:,1:4);
+Y = data(:,5);
+
+m = size(X,1);
+num_labels = 2;
+
+	Theta1 = randInitializeWeights(10,4);
+	Theta2 = randInitializeWeights(2,10);
+
+	a_1 = [ones(m,1) X];
+
+	z_2 = a_1 * Theta1';
+	a_2 = sigmoid(z_2);
+	a_2 = [ones(size(a_2,1),1) a_2];
+
+	z_3 = a_2 * Theta2';	
+	a_3 = sigmoid(z_3);
+	y_i = zeros(m,num_labels);	
+
+	for i = 1:m
+		y_i(i,Y(i,1) + 1) = 1;
+	end			
+	
+	J = 0;
+	Theta1_grad = zeros(size(Theta1));
+	Theta2_grad = zeros(size(Theta2));
+
+	D1 = 0;
+	D2 = 0;
+	for t = 1:m		
+		delta_3 = (a_3(t,:) - y_i(t, :))';
+		
+		delta_2 = Theta2(:,2:end)' * delta_3 .* sigmoidGradient(z_2(t,:))';
+		
+		D1 += delta_2 * a_1(t,:);
+		D2 += delta_3 * a_2(t,:);
+	end
+	Theta1_grad = D1/m + (lambda/m) * Theta1;
+	Theta2_grad = D2/m + (lambda/m) * Theta2;
+	Theta1_grad(:,1) = D1(:,1)/m;
+	Theta2_grad(:,1) = D2(:,1)/m;
+
+	J = (1/m) * sum(sum(-1 * y_i.*log(a_3) - (1 - y_i).*log(1 - a_3))) +...
+		 (lambda/(2*m)) * ( sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2)));
+
+	

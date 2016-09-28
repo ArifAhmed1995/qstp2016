@@ -1,0 +1,135 @@
+-------------------------------ANN-----------------------------------
+
+Test Run : 1 .......... 
+Iteration    20 | Cost: 6.161293e-02
+Time taken to train : 7.773675 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Test Set Accuracy: 100.000000 
+
+Test Run : 2 .......... 
+Iteration    20 | Cost: 5.999187e-02
+Time taken to train : 7.616928 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Test Set Accuracy: 100.000000 
+
+Test Run : 3 .......... 
+Iteration    20 | Cost: 6.443127e-02
+Time taken to train : 7.164451 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Test Set Accuracy: 100.000000 
+
+Test Run : 4 .......... 
+Iteration    20 | Cost: 7.379256e-02
+Time taken to train : 7.233373 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Test Set Accuracy: 100.000000 
+
+Test Run : 5 .......... 
+Iteration    20 | Cost: 6.430452e-02
+Time taken to train : 7.304108 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Test Set Accuracy: 100.000000 
+
+Average accuracy : 100.000000
+
+Average MCC : 1.000000
+
+Average Precision : 1.000000
+
+Average Recall : 1.000000
+
+------------------------------------SVM---------------------------------------
+
+*
+optimization finished, #iter = 748
+nu = 0.080534
+obj = -38.744371, rho = 0.120487
+nSV = 221, nBSV = 5
+Total nSV = 221
+Accuracy = 100% (412/412) (classification)
+
+Accuracy : 100.000000 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Time taken :: 0.049717 
+------------------------------------------*
+optimization finished, #iter = 799
+nu = 0.082048
+obj = -39.546639, rho = -0.139981
+nSV = 224, nBSV = 4
+Total nSV = 224
+Accuracy = 100% (412/412) (classification)
+
+Accuracy : 100.000000 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Time taken :: 0.097656 
+------------------------------------------*
+optimization finished, #iter = 812
+nu = 0.081444
+obj = -39.212607, rho = -0.134773
+nSV = 234, nBSV = 5
+Total nSV = 234
+Accuracy = 100% (412/412) (classification)
+
+Accuracy : 100.000000 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Time taken :: 0.146957 
+------------------------------------------*
+optimization finished, #iter = 851
+nu = 0.080144
+obj = -38.599623, rho = -0.107756
+nSV = 239, nBSV = 4
+Total nSV = 239
+Accuracy = 100% (412/412) (classification)
+
+Accuracy : 100.000000 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Time taken :: 0.196846 
+------------------------------------------*
+optimization finished, #iter = 804
+nu = 0.081969
+obj = -39.510978, rho = -0.133964
+nSV = 226, nBSV = 3
+Total nSV = 226
+Accuracy = 100% (412/412) (classification)
+
+Accuracy : 100.000000 
+
+Precision : 1.000000
+Recall : 1.000000
+Mathew's Correlation Coefficient : 1.000000
+Time taken :: 0.244718 
+------------------------------------------
+Mean accuracy :: 100.000000
+
+Mean recall :: 1.000000
+
+Mean precision :: 1.000000
+
+Mean MCC :: 1.000000
